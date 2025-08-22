@@ -9,7 +9,7 @@ class ShowCategoryData {
 
   Future<void> getCategoriesNews(String categoryName) async {
     try {
-      final apiKey = '96dcdaa5adc24bef8afa581f134cdb5a';
+      final apiKey = dotenv.env['NEWS_API_KEY'] ?? '';
       final url = Uri.parse(
         'https://newsapi.org/v2/top-headlines?country=us&category=$categoryName&apiKey=$apiKey',
       );
