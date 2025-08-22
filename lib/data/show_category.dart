@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app/models/show_category_model.dart';
 import 'package:news_app/models/slider_model.dart';
@@ -47,3 +47,4 @@ class ShowCategoryData {
     }
   }
 }
+
