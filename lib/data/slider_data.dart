@@ -1,6 +1,6 @@
 
 import 'dart:convert';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app/models/slider_model.dart';
 
@@ -9,7 +9,7 @@ class SliderData {
 
   Future<void> getSliders() async {
     try {
-      final apiKey = '96dcdaa5adc24bef8afa581f134cdb5a';
+      final apiKey = dotenv.env['NEWS_API_KEY'] ?? '';
       final url = Uri.parse(
         'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=$apiKey',
       );
@@ -41,4 +41,5 @@ class SliderData {
       throw Exception('Error fetching news: $e');
     }
   }
+
 }
