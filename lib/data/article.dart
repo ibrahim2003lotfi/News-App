@@ -9,7 +9,7 @@ class ArticleNews {
 
   Future<void> getArticlesNews() async {
     try {
-      final apiKey = '96dcdaa5adc24bef8afa581f134cdb5a';
+      final apiKey = dotenv.env['NEWS_API_KEY'] ?? '';
       final url = Uri.parse(
         'https://newsapi.org/v2/everything?q=apple&from=2025-08-03&to=2025-08-03&sortBy=popularity&apiKey=$apiKey',
       );
@@ -41,4 +41,5 @@ class ArticleNews {
       throw Exception('Error fetching news: $e');
     }
   }
+
 }
